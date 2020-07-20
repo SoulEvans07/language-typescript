@@ -40,6 +40,10 @@ jobs:
         name: Run package tests
         command: ./build-package.sh
     - run:
+        name: Remove atom installer
+        command: |
+          rm atom-amd64.deb
+    - run:
         name: Create artifact
         command: |
           zip -r build.zip *
