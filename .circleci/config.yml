@@ -39,5 +39,12 @@ jobs:
     - run:
         name: Run package tests
         command: ./build-package.sh
+    - run:
+        name: Move artifacts
+        command: |
+            mkdir -p /tmp/artifacts
+            cp *.* /tmp/artifacts
+    - store_artifacts:
+        path: /tmp/artifacts
     # On MacOS:
     # - run: caffeinate -s build-package.sh
