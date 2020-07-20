@@ -40,10 +40,14 @@ jobs:
         name: Run package tests
         command: ./build-package.sh
     - run:
+        name: Create artifact
+        command: |
+          zip -r build.zip *
+    - run:
         name: Move artifacts
         command: |
             mkdir -p /tmp/artifacts
-            cp -a ./ /tmp/artifacts
+            cp build.zip /tmp/artifacts
     - store_artifacts:
         path: /tmp/artifacts
     # On MacOS:
