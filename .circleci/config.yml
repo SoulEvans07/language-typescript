@@ -43,7 +43,7 @@ jobs:
         name: Move artifacts
         command: |
             mkdir -p /tmp/artifacts
-            cp *.* /tmp/artifacts
+            cp -a ./ /tmp/artifacts
     - store_artifacts:
         path: /tmp/artifacts
     # On MacOS:
